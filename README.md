@@ -1,12 +1,43 @@
-# React + Vite
+# Store Frontend
+This is the frontend for a simple store web application built with React + Vite.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app allows two types of users:
 
-## Expanding the ESLint configuration
+- 👤 **Regular users**: 
+  - ❌ Cancel appointment 
+  - 📅 Book appointment 
+  - ✏️Edit appointmnets
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🛠️ **Admins**:
+  
+  - ✅Approve appointments.
+  -   ❌ Delete appointment
+
+
+Login and signup are included with a basic role-based flow (user/admin). Data is persisted in the backend via PostgreSQL.
+
+## 🧑‍💻 User Requirements
+
+1. **Login or Sign Up** with an email and password
+2. On sign up, choose your role: `user` or `admin`
+3. **Admin** users:
+   - Can approve, decline, and delete appointments
+4. **Regular** users:
+   - Can only book appointments, cancel and edit them.
+5. The app remembers login sessions using `localStorage`
+
+
+## 🛠️ Technologies
+- React 18
+- Vite
+- Fetch API
+- LocalStorage (for session persistence)
+## 🚀 Getting Started
+
+```bash
+cd store-client
+npm install
+npm run dev

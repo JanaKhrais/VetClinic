@@ -3,6 +3,9 @@ import Bookpage from "./Bookpage";
 import EditAppointments from "./EditAppointments";
 import "../css/AppointmentList.css";
 
+
+
+//function from App.js to update the profile appointments state after changes.
 const AppointmentsList = ({ user, onProfileChange }) => {
     const [appointments, setAppointments] = useState([]);
     const [editingAppointmentId, setEditingAppointmentId] = useState(null);
@@ -15,7 +18,7 @@ const AppointmentsList = ({ user, onProfileChange }) => {
         if (user) fetchAppointments();
         else setLoading(false);
     }, [user]);
-
+    //fetch user logged in appointments
     const fetchAppointments = async () => {
         if (!user) return;
         setLoading(true);
@@ -24,14 +27,15 @@ const AppointmentsList = ({ user, onProfileChange }) => {
                 `http://localhost:5000/api/appointments/user/${user.id}`
             );
             const data = await res.json();
-            setAppointments(data);
+            setAppointments(data);//update the state
         } catch (err) {
             console.error("Error fetching appointments:", err);
         } finally {
             setLoading(false);
         }
     };
-
+    //call the bookpage 
+    //refresh list after adding appointment
     const addAppointment = async (appointment) => {
         if (!user) return alert("Login first please");
         try {
@@ -49,6 +53,7 @@ const AppointmentsList = ({ user, onProfileChange }) => {
             console.error("Error adding appointment:", err);
         }
     };
+    //call editappointment update the backend
 
     const updateAppointment = async (appointment) => {
         try {
@@ -81,7 +86,8 @@ const AppointmentsList = ({ user, onProfileChange }) => {
             console.error("Error updating appointment:", err);
         }
     };
-
+    //admin delete appointment 
+    //user delete his appointment
     const deleteAppointment = async (appointment) => {
         try {
             let url = `http://localhost:5000/api/appointments/${appointment.id}`;

@@ -15,41 +15,45 @@ import Navigation from "./Components/Navigation"; // Import the new Navigation c
 import "./App.css";
 
 function App() {
+  //to strore user logged in data
   const [user, setUser] = useState(null);
+  //to strore appointments data for logged in user 
   const [profileAppointments, setProfileAppointments] = useState([]);
 
-  // Load user from localStorage on mount
+  // Load user from localStorage on mount 
+  //check the login if yes set it in the user state
+
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
     if (savedUser) {
       const userData = JSON.parse(savedUser);
       setUser(userData);
-      fetchUserAppointments(userData.id);
+      fetchUserAppointments(userData.id);  // call the fetchUserAppointments to load the appointments from the backend
     }
   }, []);
-
+  //call apointments for the user
   const fetchUserAppointments = async (userId) => {
     try {
       const res = await fetch(`http://localhost:5000/api/appointments/user/${userId}`);
       const data = await res.json();
-      setProfileAppointments(data);
+      setProfileAppointments(data);//update the state
     } catch (err) {
       console.error("Error fetching user appointments:", err);
     }
   };
-
+  //saves user in state and localStorage, fetches their appointments.
   const handleLogin = (userData) => {
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));
     fetchUserAppointments(userData.id);
   };
-
+  //clear the user and appointments from the state
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
     setProfileAppointments([]);
   };
-
+  //update the user appointments 
   const handleProfileChange = (updatedAppointments) => {
     setProfileAppointments(updatedAppointments);
   };

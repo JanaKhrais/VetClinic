@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../css/bookpage.css";
 
+
+//onAdd unction called after book successfuly
 const Bookpage = ({ onAdd = () => { }, user }) => {
     const [formData, setFormData] = useState({
         mobile_number: "",
         date: "",
         time: "09:00"
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
+    });//holds the inputs
+    const [isSubmitting, setIsSubmitting] = useState(false);//loading state
+    const [availableTimeSlots, setAvailableTimeSlots] = useState([]);//array for rime
 
     // Generate time slots from 9 AM to 5 PM
     useEffect(() => {
@@ -21,7 +23,7 @@ const Bookpage = ({ onAdd = () => { }, user }) => {
         }
         setAvailableTimeSlots(slots);
     }, []);
-
+    //send appointment ot the backend
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!user) return alert("Please login first!");
@@ -47,7 +49,7 @@ const Bookpage = ({ onAdd = () => { }, user }) => {
 
             // Call onAdd safely (default empty function ensures no error)
             onAdd(data);
-
+            //call it so a new appointment is created
             setFormData({ mobile_number: "", date: "", time: "09:00" });
 
             // Show success message

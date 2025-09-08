@@ -1,8 +1,15 @@
 import { useState } from "react";
 import "../css/EditAppointments.css"; // We'll create this CSS file
 
+
+
+
+
+//appointment to edit
+//onupdate function to save changes the parent component
+//oncancel clos edit without saving
 const EditAppointments = ({ appointment, onUpdate, onCancel }) => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({//current appointment data
         mobile_number: appointment.mobile_number,
         date: formatDateForInput(appointment.date),
         time: formatTimeForInput(appointment.date)
@@ -19,7 +26,7 @@ const EditAppointments = ({ appointment, onUpdate, onCancel }) => {
         const date = new Date(dateString);
         return date.toTimeString().substring(0, 5);
     }
-
+    //update time, date
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!formData.mobile_number || !formData.date || !formData.time) {
@@ -30,6 +37,7 @@ const EditAppointments = ({ appointment, onUpdate, onCancel }) => {
         // Combine date and time into a single datetime string
         const datetimeString = `${formData.date}T${formData.time}:00`;
         onUpdate({ ...appointment, ...formData, date: datetimeString });
+        //parent component will update the backend and refresh the list.
     };
 
     const handleChange = (e) => {

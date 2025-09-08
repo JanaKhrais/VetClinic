@@ -6,14 +6,14 @@ import Pet3 from "../assets/pet3.jpg";
 import "../css/Home.css";
 
 function Home() {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);//to keetrack whicch slide 
 
     const sliderImages = [
         Pet1,
         Pet2,
         Pet3
     ];
-
+    //change slide every 5 sec
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
@@ -21,7 +21,7 @@ function Home() {
 
         return () => clearInterval(interval);
     }, [sliderImages.length]);
-
+    //allows the user to go from slide to another
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
     };
@@ -92,45 +92,9 @@ function Home() {
             </section>
 
 
-            {/* <section className="about-section">
-                <div className="about-container">
-                    <div className="about-content">
-                        <div className="about-text">
-                            <h2 className="section-title">
-                                <span className="title-decoration">About</span> Our Clinic
-                            </h2>
-                            <div className="divider"></div>
-                            <p className="about-description">
-                                Every clinic has its own story. At <span className="clinic-name">VClinic</span>, we believe all pets
-                                are not just animals—they are family! Our mission is to provide exceptional care,
-                                love, and compassion for all pets that walk through our doors.
-                            </p>
-
-                            <div className="features-grid">
-                                <div className="feature-card">
-                                    <div className="feature-icon">❤️</div>
-                                    <h3>Compassionate Care</h3>
-                                    <p>We treat every pet with the love and attention they deserve</p>
-                                </div>
-
-                                <div className="feature-card">
-                                    <div className="feature-icon">⚕️</div>
-                                    <h3>Expert Team</h3>
-                                    <p>Highly qualified veterinarians dedicated to pet health</p>
-                                </div>
-
-                                <div className="feature-card">
-                                    <div className="feature-icon">⭐</div>
-                                    <h3>Premium Service</h3>
-                                    <p>State-of-the-art facilities with personalized care</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
 
             {/* CTA Section */}
+
             <section className="cta-section">
                 <div className="cta-container">
                     <h2>Ready to Give Your Pet the Best Care?</h2>
