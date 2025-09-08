@@ -11,6 +11,8 @@ import AdminDashboard from "./Components/AdminDashboard";
 import Profile from "./Components/Profile";
 import AppointmentsList from "./Components/AppointmentsList";
 import Navigation from "./Components/Navigation"; // Import the new Navigation component
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import "./App.css";
 

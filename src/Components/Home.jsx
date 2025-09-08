@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import DogImage from "./DogImage"; // make DogImage.js in the same folder
-
+import Card from 'react-bootstrap/Card';
 import Pet1 from "../assets/pet1.jpg";
 import Pet2 from "../assets/pet2.jpg";
 import Pet3 from "../assets/pet3.jpg";
@@ -93,9 +93,20 @@ function Home() {
                 </div>
             </section>
             <section className="dog-section">
-                <h2>🐶 Dog of the Day</h2>
+                {/* <h2>🐶 Dog of the Day</h2>
                 <div className="dogbutton">
                     <DogImage />
+                </div> */}
+                <div className="container mt-4">
+                    <Card className="text-center">
+                        <Card.Body>
+                            <Card.Title>🐶 Dog of the Day</Card.Title>
+                            <DogImage />
+                            <Card.Text className="mt-3">
+
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                 </div>
 
 

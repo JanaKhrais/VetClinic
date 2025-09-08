@@ -5,6 +5,7 @@
 
 /* Dog of the Day Section */
 /* Dog of the Day Section */
+
 .dog-section {
 
 
@@ -47,6 +48,17 @@
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+}
+
+.dog-section .card {
+    background: transparent;
+    /* makes it match the gradient */
+    border: none;
+    /* removes the card border */
+    box-shadow: none;
+    /* optional, removes the shadow */
+    color: white;
+    /* ensures text is readable */
 }
 
 .dog-section img:hover {
