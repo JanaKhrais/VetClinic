@@ -1,0 +1,169 @@
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App.css */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  /* title left, nav right */
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  color: #007bff;
+  /* blue hover effect */
+}
+
+/* Make App full height */
+body,
+html,
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  background-color: #ffa600b3;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.title-contact {
+  margin: 0;
+  /* Remove fixed margin */
+  text-align: center;
+  /* Center the title */
+}
+
+.contactus {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  gap: 30px;
+  /* Space between items */
+  flex-wrap: wrap;
+  /* Wrap on small screens */
+  margin-top: 10px;
+}
+
+.contactus p {
+  margin: 0;
+  /* Remove default margins */
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* ////////////////// */
+.book-button button {
+  background-color: #ffa600;
+  /* solid orange */
+  color: white;
+  /* white text */
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.book-button button:hover {
+  background-color: #ffb733;
+  /* lighter orange on hover */
+}
+
+
+
+.home-pic img {
+  width: 100%;
+  /* Take full width of the container */
+  max-width: 800px;
+  /* Keep max width so it doesn't get too big */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 15px;
+}
+
+.home-text {
+  max-width: 50%;
+  text-align: left;
+}
+
+.home-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
