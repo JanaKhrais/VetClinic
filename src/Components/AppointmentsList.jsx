@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Bookpage from "./Bookpage";
 import EditAppointments from "./EditAppointments";
+
 import "../css/AppointmentList.css";
 
 
@@ -132,6 +133,37 @@ const AppointmentsList = ({ user, onProfileChange }) => {
     };
 
     const isUpcoming = (dateString) => new Date(dateString) > new Date();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div className="appointments-container">

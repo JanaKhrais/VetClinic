@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import DogImage from "./DogImage"; // make DogImage.js in the same folder
+
 import Pet1 from "../assets/pet1.jpg";
 import Pet2 from "../assets/pet2.jpg";
 import Pet3 from "../assets/pet3.jpg";
@@ -90,7 +92,14 @@ function Home() {
                     </div>
                 </div>
             </section>
+            <section className="dog-section">
+                <h2>🐶 Dog of the Day</h2>
+                <div className="dogbutton">
+                    <DogImage />
+                </div>
 
+
+            </section>
 
 
             {/* CTA Section */}
@@ -107,6 +116,8 @@ function Home() {
                     </Link>
                 </div>
             </section>
+
+
         </div>
     );
 }
